@@ -2,28 +2,23 @@ package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.stereotype.Service;
 
 //@Configuration
+@Service
 public class Init implements CommandLineRunner  {
     @Autowired
-    ProductRepository bookRepository;
-
+    ProductRepository productRepo;
     @Autowired
-    UserRepository customerRepository;
+    UserRepository userRepo;
 
     @Override
     public void run(String[] args) {
-        if (bookRepository.count() == 0) {
-
-
-        bookRepository.save(new Product(null, "The Iliad - with CommandLineRunner", "Homer", 300));
-        bookRepository.save(new Product(null, "The Hitchhikers Guide to the Galaxy - with CommandLineRunner", "Douglas Adams", 500));
-        bookRepository.save(new Product(null, "Pippi Longstocking - with CommandLineRunner", "Astrid Lindgren", 250));
-
-        customerRepository.save(new User("Donald", "Duck", "donald@disney.com", "123"));
-        customerRepository.save(new User("Daisy", "Duck", "daisy@disney.com", "abc"));
-        customerRepository.save(new User("Scrooge", "McDuck", "scrooge@disney.com", "321"));
-        }
+        Wisher user = new Wisher("admin", "admin", "admin@admin.com", "admin");
+        user = userRepo.save(user);
+        Product product = new Product(null, "Bibel", "Jesus", 100);
+        product.setWisher(user);
+        productRepo.save(product);
     }
 
 	/*

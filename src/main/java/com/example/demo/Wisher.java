@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class User {
+public class Wisher {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -16,13 +16,13 @@ public class User {
     @Column(name="EMAIL_ADDRESS")
     private String email;
     private String password;
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "wisher", cascade = CascadeType.ALL)
     List<Product> product = new ArrayList<>();
 
-    public User() {
+    public Wisher() {
     }
 
-    public User(String firstName, String lastName, String email, String password) {
+    public Wisher(String firstName, String lastName, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;

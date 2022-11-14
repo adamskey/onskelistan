@@ -17,7 +17,7 @@ public class UserController {
 
     @GetMapping("/customers")
     public String customers(Model model) {
-        List<User> customers = (List<User>)repository.findAll();
+        List<Wisher> customers = (List<Wisher>)repository.findAll();
         model.addAttribute("customers", customers);
 
         return "customers";
@@ -25,12 +25,12 @@ public class UserController {
 
     @GetMapping("/addCustomer")
     public String add(Model model) {
-        model.addAttribute("customer", new User());
+        model.addAttribute("customer", new Wisher());
         return "customerForm";
     }
 
     @PostMapping("/saveCustomer")
-    public String set(@ModelAttribute User customer) {
+    public String set(@ModelAttribute Wisher customer) {
         repository.save(customer);
         return "redirect:/customers";
     }

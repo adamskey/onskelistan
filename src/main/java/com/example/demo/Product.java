@@ -11,7 +11,7 @@ public class Product {
     private String author;
     private Integer price;
     @ManyToOne
-    User user;
+    Wisher wisher;
 
     public Product() {
     }
@@ -55,4 +55,11 @@ public class Product {
         this.price = price;
     }
 
+    public Wisher getWisher() {
+        return wisher;
+    }
+
+    public void setWisher(Wisher wisher) {
+        this.wisher = wisher;
+    }
 }
