@@ -50,7 +50,7 @@ public class ProductController {
     }
 
     private List<Product> getPage(int page, int pageSize) {
-        List<Product> books = (List<Product>)repository.findAllByOrderByAuthor();
+        List<Product> books = (List<Product>)repository.findAllByOrderByName();
         int from = Math.max(0,page*pageSize);
         int to = Math.min(books.size(),(page+1)*pageSize);
 
@@ -64,7 +64,7 @@ public class ProductController {
 
     @GetMapping("/add")
     public String add(Model model) {
-        model.addAttribute("book", new Product());
+        model.addAttribute("product", new Product());
         return "form";
     }
 

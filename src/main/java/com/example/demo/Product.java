@@ -7,8 +7,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String title;
-    private String author;
+    private String name;
     private Integer price;
     @ManyToOne
     Wisher wisher;
@@ -16,10 +15,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(Long id, String title, String author, Integer price) {
+    public Product(Long id, String title, Integer price) {
         this.id = id;
-        this.title = title;
-        this.author = author;
+        this.name = title;
         this.price = price;
     }
 
@@ -31,20 +29,12 @@ public class Product {
         this.id = id;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Integer getPrice() {

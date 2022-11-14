@@ -7,11 +7,10 @@
 <body>
     <h1>Book</h1>
 
-    <form th:object="${book}" action="/save" method="POST">
-        Title: <input type="text" th:field="*{title}"/>
-        Author: <input type="text" th:field="*{author}"/>
+    <form th:object="${product}" action="/save" method="POST">
+        Title: <input type="text" th:field="*{name}"/>
         Price: <input type="text" th:field="*{price}"/>
-        <input type="hidden" th:if="${book.id != null}" th:field="*{id}"/>
+        <input type="hidden" th:if="${product.id != null}" th:field="*{id}"/>
         <input type="submit" value="Save book">
     </form>
 

@@ -6,6 +6,5 @@ import java.util.List;
 
 public interface ProductRepository extends CrudRepository<Product, Long> {
 
-    List<Product> findAllByOrderByAuthorDesc();
-    List<Product> findAllByOrderByAuthor();
+    List<Product> findAllByOrderByName();
 }

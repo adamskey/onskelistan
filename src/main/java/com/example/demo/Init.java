@@ -16,7 +16,7 @@ public class Init implements CommandLineRunner  {
     public void run(String[] args) {
         Wisher user = new Wisher("admin", "admin", "admin@admin.com", "admin");
         user = userRepo.save(user);
-        Product product = new Product(null, "Bibel", "Jesus", 100);
+        Product product = new Product(null, "Bibel", 100);
         product.setWisher(user);
         productRepo.save(product);
     }

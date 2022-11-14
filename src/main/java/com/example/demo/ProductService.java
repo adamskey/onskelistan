@@ -13,7 +13,7 @@ public class ProductService {
         books = new ArrayList<>();
 
         for (int i = 1; i <= 95; i++) {
-            books.add(new Product(200L+i, "Product Title " + i, "Author name " + i, 40 + i));
+            books.add(new Product(200L+i, "Product Title " + i, 40 + i));
         }
     }
 

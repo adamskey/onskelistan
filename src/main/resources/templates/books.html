@@ -17,8 +17,8 @@
             <th>Author</th>
         </tr>
         <tr th:each="book : ${books}">
-            <th><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}" th:text="${book.title}"></a></th>
-            <th th:text="${book.author}"></th>
+            <th><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}" th:text="${book.name}"></a></th>
+
         </tr>
     </table>
     <div>
