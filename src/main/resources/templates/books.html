@@ -3,24 +3,51 @@
 <head>
     <meta charset="UTF-8"></meta>
     <title>Books</title>
+    <link href="/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/style.css" rel="stylesheet">
+    <link rel="shortcut icon" href="santa-claus.jpg" type="image/png">
+    <link rel="preconnect" href=https://fonts.googleapis.com>
+    <link rel="preconnect" href=https://fonts.gstatic.com crossorigin>
+    <link href=https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap rel="stylesheet">
 </head>
 <body>
-<h1>Books</h1>
+<script src="js.js"></script>
+<!-- start -->
+<section id="header">
 
-    <p><a href="/customers">Customers</a></p>
+    <div id="myDIV" class="header">
+        <div class="header-text">
+            <h1>My Christmas Wish List</h1>
+        </div>
+        <p><a href="/customers">Customers</a></p>
 
-    <a href="/add">New Book</a>
+        <a href="/add">New Book</a>
 
-    <table style="text-align:left">
-        <tr>
-            <th>Title</th>
-            <th>Author</th>
-        </tr>
-        <tr th:each="book : ${books}">
-            <th><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}" th:text="${book.name}"></a></th>
+        <table style="text-align:left">
+            <tr>
+                <p th:text="'Logged in as: ' + ${session.username}"></p>
+            </tr>
+            <tr th:each="book : ${books}">
+                <th><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}" th:text="${book.name}"></a></th>
 
-        </tr>
-    </table>
+            </tr>
+        </table>
+
+        <input type="text" id="myInput" placeholder="Make a wish ...">
+
+        <span onclick="newElement()" class="addBtn">Add my wish!</span>
+
+        <div id="myULDiv">
+
+            <ol id="myUL">
+
+            </ol>
+
+        </div>
+
+    </div>
+</section>
+<!-- end-->
     <div>
 
         <span th:if="${showPrev}">

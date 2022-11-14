@@ -10,12 +10,12 @@ public class Wisher {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name="FIRST_NAME")
-    private String firstName;
+     String firstName;
     @Column(name="LAST_NAME")
-    private String lastName;
+     String lastName;
     @Column(name="EMAIL_ADDRESS")
-    private String email;
-    private String password;
+     String email;
+     String password;
     @OneToMany(mappedBy = "wisher", cascade = CascadeType.ALL)
     List<Product> product = new ArrayList<>();
 

@@ -15,7 +15,7 @@ public class ProductController {
     @Autowired
     private ProductRepository repository;
 
-    @GetMapping("/")
+    @GetMapping("/inloggad")
     public String books(Model model, @RequestParam(value="page", required=false, defaultValue="1") int page) {
 
         List<Product> books = getPage(page-1, PAGE_SIZE);
@@ -72,7 +72,7 @@ public class ProductController {
     public String set(@ModelAttribute Product book) {
         repository.save(book);
 
-        return "redirect:/";
+        return "redirect:/inloggad";
     }
 
     @GetMapping("/edit/{id}")
@@ -87,7 +87,7 @@ public class ProductController {
     public String set2(@ModelAttribute Product book) {
         repository.save(book);
 
-        return "redirect:/";
+        return "redirect:/inloggad";
     }
 
 }

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 @Controller
@@ -33,5 +34,19 @@ public class UserController {
     public String set(@ModelAttribute Wisher customer) {
         repository.save(customer);
         return "redirect:/customers";
+    }
+    @GetMapping("/")
+    public String userLogin(Model model){
+        model.addAttribute("user", new Wisher());
+        return "login";
+    }
+    @PostMapping("/")
+    public String login(HttpSession session, @ModelAttribute Wisher user) {
+        Wisher wisher = repository.findByFirstNameAndPassword(user.firstName, user.password);
+        if (wisher != null) {
+            session.setAttribute("username", user.getFirstName());
+            return "books";
+        }
+        return "redirect:/";
     }
 }
