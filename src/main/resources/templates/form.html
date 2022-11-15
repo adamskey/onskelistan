@@ -2,17 +2,30 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Books</title>
+    <title>LÄGG TILL PRODUKTER</title>
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Book</h1>
+<section id="header">
+
+    <div id="myDIV" class="header">
+        <div class="header-text">
+            <br>
+            <br>
+            <br>
+            <br>
+            <h1>LÄGG TILL PRODUKT</h1>
+        </div>
+
 
     <form th:object="${product}" action="/save" method="POST">
-        Title: <input type="text" th:field="*{name}"/>
-        Price: <input type="text" th:field="*{price}"/>
+        <input placeholder="Namn" type="text" th:field="*{name}"/>
+        <input placeholder="Pris" type="text" th:field="*{price}"/>
         <input type="hidden" th:if="${product.id != null}" th:field="*{id}"/>
-        <input type="submit" value="Save book">
+        <input type="submit" value="Spara">
     </form>
+    </div>
+</section>
 
 </body>
 </html>

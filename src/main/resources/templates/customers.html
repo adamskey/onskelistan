@@ -2,12 +2,22 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Customers</title>
+    <title>ANVÄNDARE</title>
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-<h1>Customers</h1>
+<section id="header">
 
-    <a href="/addCustomer">New Customer</a>
+    <div id="myDIV" class="header">
+        <div class="header-text">
+            <br>
+            <br>
+            <br>
+            <br>
+<h1>Användare</h1>
+
+    <a href="/addCustomer">Lägg till ny användare</a>
+        </div>
 
     <table style="text-align:left">
         <tr>
@@ -21,6 +31,8 @@
             <th th:text="${customer.email}"></th>
         </tr>
     </table>
+    </div>
+</section>
 
 </body>
 </html>

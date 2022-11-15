@@ -9,9 +9,19 @@ import java.util.List;
 
 @SpringBootTest
 class DemoApplicationTests {
+	@Autowired
+	UserRepository UserRepository;
+
 
 	@Test
 	void contextLoads() {
 	}
 
+	@Test
+	public void test1() {
+		Wisher wisher = UserRepository.findByFirstNameAndPassword("tomten", "tomten");
+		Assertions.assertEquals("tomten", wisher.getFirstName());
+		Assertions.assertEquals("tomten", wisher.getPassword());
+
+	}
 }

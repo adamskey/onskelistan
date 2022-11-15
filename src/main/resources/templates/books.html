@@ -16,17 +16,25 @@
 <section id="header">
 
     <div id="myDIV" class="header">
+        <div class="b">
+        <p th:text="'Logged in as: ' + ${session.username}"></p>
+        </div>
         <div class="header-text">
+
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
             <h1>My Christmas Wish List</h1>
         </div>
-        <p><a href="/customers">Customers</a></p>
+        <p><a href="/customers">Användare</a></p>
 
-        <a href="/add">New Book</a>
+        <a href="/add">Lägg till ny produkt</a>
+        <br>
 
         <table style="text-align:left">
-            <tr>
-                <p th:text="'Logged in as: ' + ${session.username}"></p>
-            </tr>
             <tr th:each="book : ${books}">
                 <th><a th:href="'/book/' + ${currentPage} + '/' + ${book.id}" th:text="${book.name}"></a></th>
 

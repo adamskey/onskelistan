@@ -2,24 +2,25 @@
 <html lang="en" xmlns:th="http://wwmw.thymeleaf.org">
 <head>
     <meta charset="UTF-8"></meta>
-    <title>Book</title>
+    <title>PRODUKTER</title>
+    <link href="/style.css" rel="stylesheet">
 </head>
 <body>
-    <h1>Book</h1>
+    <h1>Produkter</h1>
     <div>
-        <p><a th:href="'/?page=' + ${page}">Back to books</a></p>
+        <p><a th:href="'/?page=' + ${page}">Tillbaka</a></p>
     </div>
     <div>
-        <p><a th:href="'/edit/' + ${book?.id}">Edit book</a></p>
+        <p><a th:href="'/edit/' + ${book?.id}">Ändra produkt</a></p>
     </div>
     <table>
         <tr>
-            <th>Title</th>
+            <th>Namn</th>
             <th th:text="${book?.name}"></th>
         </tr>
 
         <tr>
-            <th>Price</th>
+            <th>Pris</th>
             <th th:text="${book?.price}"></th>
         </tr>
     </table>
